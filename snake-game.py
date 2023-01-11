@@ -5,13 +5,13 @@ import turtle
 import time
 import random
 
-tizlik = 0.50
+tizlik = 0.15
 
 #Ekrana çykarýan, 
 
 ekran = turtle.Screen()
 ekran.title('Snake Game by @Atamyrat2005')
-ekran.bgcolor('white')
+ekran.bgcolor('green')
 ekran.setup(width=600, height=600)
 ekran.tracer(0)
 
