@@ -91,22 +91,15 @@ ekran.onkey(goLeft, 'Left')
 while True:
     ekran.update()
 
-# Ýylan ekerandan çykanda oýny täzeden başlatýa
+# Ýylan ekerandan çykanda oýun gutarýar (Game over when snake hits the wall)
     
-    if kelle.xcor() > 300 or kelle.xcor() < -300 or kelle.ycor() > 300 or kelle.ycor() < - 300:
-        time.sleep(1)
-        kelle.goto(0, 0)
-        kelle.direction = 'stop'
-
-        for guryk in guyruglar:
-            guryk.goto(1000, 1000)
-
-        guyruglar = []
-        utuk = 0
+    if kelle.xcor() > 290 or kelle.xcor() < -290 or kelle.ycor() > 290 or kelle.ycor() < -290:
+        yaz.goto(0, 0)
         yaz.clear()
-        yaz.write('Utuk: {}'. format(utuk), align='center', font=('Courier', 24, 'normal'))
-
-        tizlik = 0.15 
+        yaz.write('Oýun Gutardy! Utuk: {}'.format(utuk), align='center', font=('Courier', 24, 'normal'))
+        ekran.update()
+        time.sleep(2)
+        break
 
     if kelle.distance(awy) < 20:
         x = random.randint(-250, 250)
