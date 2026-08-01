@@ -91,22 +91,15 @@ ekran.onkey(goLeft, 'Left')
 while True:
     ekran.update()
 
-# Ýylan ekerandan çykanda oýny täzeden başlatýa
-    
+# Ýylan ekerandan çykanda oýun gutarýa (Game Over)
+
     if kelle.xcor() > 300 or kelle.xcor() < -300 or kelle.ycor() > 300 or kelle.ycor() < - 300:
-        time.sleep(1)
-        kelle.goto(0, 0)
-        kelle.direction = 'stop'
-
-        for guryk in guyruglar:
-            guryk.goto(1000, 1000)
-
-        guyruglar = []
-        utuk = 0
         yaz.clear()
-        yaz.write('Utuk: {}'. format(utuk), align='center', font=('Courier', 24, 'normal'))
-
-        tizlik = 0.15 
+        yaz.goto(0, 0)
+        yaz.write('Game Over!', align='center', font=('Courier', 36, 'normal'))
+        ekran.update()
+        time.sleep(2)
+        break
 
     if kelle.distance(awy) < 20:
         x = random.randint(-250, 250)
