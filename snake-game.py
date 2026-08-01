@@ -91,12 +91,12 @@ ekran.onkey(goLeft, 'Left')
 while True:
     ekran.update()
 
-# Ýylan ekerandan çykanda oýun gutarýar (Game over when snake hits the wall)
-    
-    if kelle.xcor() > 290 or kelle.xcor() < -290 or kelle.ycor() > 290 or kelle.ycor() < -290:
-        yaz.goto(0, 0)
+# Ýylan ekerandan çykanda oýun gutarýa (Game Over)
+
+    if kelle.xcor() > 300 or kelle.xcor() < -300 or kelle.ycor() > 300 or kelle.ycor() < - 300:
         yaz.clear()
-        yaz.write('Oýun Gutardy! Utuk: {}'.format(utuk), align='center', font=('Courier', 24, 'normal'))
+        yaz.goto(0, 0)
+        yaz.write('Game Over!', align='center', font=('Courier', 36, 'normal'))
         ekran.update()
         time.sleep(2)
         break
